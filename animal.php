@@ -7,17 +7,6 @@ class Hewan {
     public $mamalia;
     public $reptil;
     public $unggas;
-
-    // ini adalah method/behaviour/perilaku/kerja
-    // saran penulisan adalah camelCase (tp boleh pake underscore)
-    public function animalKingdom() {
-        echo "<h3>Animal Kingdom</h3>";
-        echo "Nama : ". $this->nama ."</br>";
-        echo "Jenis : ". $this->jenis ."</br>";
-        echo "Asal : ". $this->asal ." </br>";
-        
-    }
-
         
     public function habitat() {
         if ($this->habitat == "D") {
@@ -27,7 +16,7 @@ class Hewan {
             echo "Habitat : air </br>";
         }  
         elseif ($this->habitat == "DA") {
-            echo "Habitat : darat dan a+ir<br>";
+            echo "Habitat : darat dan air<br>";
         }   
         else {
             echo "Habitat tidak diketahui<br>";
@@ -39,18 +28,18 @@ class Hewan {
         $this->nama = $nama;
         $this->jenis = $jenis;
         $this->asal = $asal;
-        $this->habitat = $habitat;
+        $this->habitat = strtolower($habitat);
     }
 }
 
 
-// ini pembuatan objek baru
-$kucingpersia = new Hewan ("Kucing Persia", "mamalia", "Iran", "D");
-$lumba2pink = new Hewan ("Lumba-lumba pink", "mamalia", "Amerika Selatan", "A");
-$buayanil = new Hewan ("Buaya Nil", "reptil", "Afrika", "DA");
-$iguanalaut = new Hewan ("Iguana Laut", "reptil", "Ekuador", "DA");
-$ayamcemani = new Hewan ("Ayam Cemani", "unggas", "Indonesia", "D");
-$burungpuyuh = new Hewan ("Burung Puyuh", "unggas", "Jepang", "D");
+$animalKingdom
+new Hewan ("Kucing Persia", "mamalia", "Iran", "D");
+new Hewan ("Lumba-lumba pink", "mamalia", "Amerika Selatan", "A");
+new Hewan ("Buaya Nil", "reptil", "Afrika", "DA");
+new Hewan ("Iguana Laut", "reptil", "Ekuador", "DA");
+new Hewan ("Ayam Cemani", "unggas", "Indonesia", "D");
+new Hewan ("Burung Puyuh", "unggas", "Jepang", "D");
 
 $animalKingdom = [$kucingpersia, $lumba2pink, $buayanil, $iguanalaut, $ayamcemani, $burungpuyuh];
 foreach ($animalKingdom as $ak) {
